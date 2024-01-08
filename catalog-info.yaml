@@ -25,7 +25,7 @@ metadata:
       icon: web
 spec:
   type: service
-  lifecycle: production
+  lifecycle: development
   owner: "group:default/cool-lab"
   providesApis:
     - "maanantai"
