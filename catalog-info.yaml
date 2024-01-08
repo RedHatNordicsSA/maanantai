@@ -1,43 +1,14 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: "maanantai"
-  description: "A cool quarkus app"
+  name: maanantai
+  description: ping-demo
   annotations:
-    argocd/app-name: maanantai-dev
     backstage.io/kubernetes-id: maanantai
-    backstage.io/kubernetes-namespace: maanantai-dev
-    janus-idp.io/tekton-enabled: 'true'
-    janus-idp.io/tekton: maanantai
-    backstage.io/source-location: url:https://github.com/RedHatNordicsSA/maanantai
-    backstage.io/techdocs-ref: url:https://github.com/RedHatNordicsSA/maanantai
-    gitlab.com/project-slug: RedHatNordicsSA/maanantai
-    quay.io/repository-slug: "/maanantai"
-  tags:
-    - java
-    - quarkus
-  links:
-    - url: https://devspaces.apps.rh-ocp-01.cool.lab/#https://github.com/RedHatNordicsSA/maanantai?che-editor=che-incubator/che-code/insiders&devfilePath=.devfile-vscode.yaml
-      title: OpenShift Dev Spaces (VS Code)
-      icon: web
-    - url: https://devspaces.apps.rh-ocp-01.cool.lab/#https://github.com/RedHatNordicsSA/maanantai?che-editor=che-incubator/che-idea/latest&devfilePath=.devfile-intellij.yaml
-      title: OpenShift Dev Spaces (JetBrains IntelliJ)
-      icon: web
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: RedHatNordicsSA/maanantai
 spec:
-  type: service
-  lifecycle: development
-  owner: "group:default/cool-lab"
-  providesApis:
-    - "maanantai"
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: "maanantai"
-  description: "A cool quarkus app"
-spec:
-  type: openapi
+  type: api
+  system: 
   lifecycle: production
-  owner: "group:default/cool-lab"
-  definition:
-    $text: ./openapi.yaml
+  owner: cool-lab
